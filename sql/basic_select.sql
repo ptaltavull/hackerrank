@@ -1,0 +1,70 @@
+/* Select All */
+SELECT * FROM CITY;
+
+/* Select By ID */
+SELECT * FROM CITY WHERE ID = 1661;
+
+/* Employee Names */
+SELECT NAME FROM EMPLOYEE ORDER BY NAME;
+
+/* Employee Salaries */
+SELECT NAME FROM EMPLOYEE 
+WHERE SALARY > 2000 AND MONTHS < 10 ORDER BY EMPLOYEE_ID;
+
+/* Japanese Cities' Names */
+SELECT NAME FROM CITY WHERE COUNTRYCODE LIKE 'JPN';
+
+/* Japanese Cities' Attributes */
+SELECT * FROM CITY WHERE COUNTRYCODE LIKE 'JPN';
+
+/* Higher Than 75 Marks */
+SELECT NAME FROM STUDENTS 
+WHERE MARKS > 75 ORDER BY SUBSTR(NAME,LENGTH(NAME)-2,3), ID;
+
+/* Weather Observation Station 1 */
+SELECT CITY, STATE FROM STATION
+
+/* Weather Observation Station 3 */
+SELECT DISTINCT CITY FROM STATION WHERE mod(ID,2) = 0;
+
+/* Weather Observation Station 4 */
+SELECT  COUNT(CITY) - COUNT(DISTINCT CITY) FROM STATION ;
+
+/* Weather Observation Station 5 */
+SELECT CITY,LENGTH(CITY) FROM STATION ORDER BY LENGTH(CITY) ASC, CITY LIMIT 1; 
+SELECT CITY,LENGTH(CITY) FROM STATION ORDER BY LENGTH(CITY) DESC, CITY LIMIT 1; 
+
+/* Weather Observation Station 6 */
+SELECT DISTINCT CITY FROM STATION WHERE LOWER(SUBSTR(CITY,1,1)) IN ('a','e','i','o','u');
+
+/* Weather Observation Station 7 */
+SELECT DISTINCT CITY FROM STATION WHERE LOWER(SUBSTR(CITY,LENGTH(CITY),1)) IN ('a','e','i','o','u');
+
+/* Weather Observation Station 8 */
+SELECT DISTINCT CITY FROM STATION 
+WHERE LOWER(SUBSTR(CITY,1,1)) IN ('a','e','i','o','u')
+AND LOWER(SUBSTR(CITY,LENGTH(CITY),1)) IN ('a','e','i','o','u');
+
+/* Weather Observation Station 9 */
+SELECT DISTINCT CITY FROM STATION 
+WHERE LOWER(SUBSTR(CITY,1,1)) NOT IN ('a','e','i','o','u');
+
+/* Weather Observation Station 10 */
+SELECT DISTINCT CITY FROM STATION 
+WHERE LOWER(SUBSTR(CITY,LENGTH(CITY),1)) NOT IN ('a','e','i','o','u');
+
+/* Weather Observation Station 11 */
+SELECT DISTINCT CITY FROM STATION 
+WHERE LOWER(SUBSTR(CITY,1,1)) NOT IN ('a','e','i','o','u')
+OR LOWER(SUBSTR(CITY,LENGTH(CITY),1)) NOT IN ('a','e','i','o','u');
+
+/* Weather Observation Station 12 */
+SELECT DISTINCT CITY FROM STATION 
+WHERE LOWER(SUBSTR(CITY,LENGTH(CITY),1)) NOT IN ('a','e','i','o','u')
+AND  LOWER(SUBSTR(CITY,1,1)) NOT IN ('a','e','i','o','u');
+
+/* Revising the Select Query I */
+SELECT * FROM CITY WHERE POPULATION > 100000 AND COUNTRYCODE LIKE 'USA';
+
+/* Revising the Select Query II */
+SELECT NAME FROM CITY WHERE POPULATION > 120000 AND COUNTRYCODE LIKE 'USA';
