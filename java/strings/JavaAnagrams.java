@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Solution {
+public class JavaAnagrams {
 
     static boolean isAnagram(String a, String b) {
         // Complete the function
