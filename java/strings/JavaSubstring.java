@@ -1,5 +1,3 @@
-package java.strings;
-
 import java.io.*;
 import java.util.*;
 import java.text.*;
